@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <center> 
+        <head>
+            
+            <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+            <h1> Data Visualization </h1>
+            <h2> Assignment 3 </h2>
+            <h3><i>Mayur Sridhar Sharma</i></h3>
+    
+        </head>
+    </center>
+    <br>
+    
+    <body>
+        <p> 
+            The following visualization tells us about which agency has the most square footage owned/acquired till date. A simple sorted  bar plot shows the median sqaure footage v/s the corresponding agency name.  
+    
+        </p>
+    
+    
+        
+    <div id="vis"> </div>
+    
+    <script type="text/javascript">
+      var yourVlSpec = {
+          
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "description": "A simple bar chart with embedded data.",
+          "data": {"url": "https://raw.githubusercontent.com/Mayur-Sharma12/Mayur-Sharma12.github.io/master/building_inventory2.csv", "format": {"type": "csv"}},
+          "mark": "bar",
+          "title": "Agency v/s Median Square Footage",
+          "encoding": {
+                "x": {"field": "Agency Name", "type": "nominal", "sort":"-y", "axis": {"labelAngle": 45}},
+                "y": {"aggregate" : "median", "field": "Square Footage", "type": "quantitative"}
+                }
+          
+          };
+      vegaEmbed('#vis', yourVlSpec);
+    </script>
+    </body>
+    
+</html>
