@@ -21,7 +21,7 @@
         </p>
     
     
-        
+    <center>   
     <div id="vis"> </div>
     
     <script type="text/javascript">
@@ -32,14 +32,39 @@
           "data": {"url": "https://raw.githubusercontent.com/Mayur-Sharma12/Mayur-Sharma12.github.io/master/building_inventory2.csv", "format": {"type": "csv"}},
           "mark": "bar",
           "title": "Agency v/s Median Square Footage",
+          "selection": {
+                        "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
+                        "select": {"type": "multi"}
+                        },
+          "mark": {
+                        "type": "bar",
+                        "fill": "#4C78A8",
+                        "stroke": "black",
+                        "cursor": "pointer"
+                  },
           "encoding": {
-                "x": {"field": "Agency Name", "type": "nominal", "sort":"-y", "axis": {"labelAngle": 45}},
-                "y": {"aggregate" : "median", "field": "Square Footage", "type": "quantitative"}
-                }
+                        "x": {"field": "Agency Name", "type": "nominal", "sort":"-y", "axis": {"labelAngle": 45}},
+                        "y": {"aggregate" : "median", "field": "Square Footage", "type": "quantitative"},
+                        "fillOpacity": {"condition": {"selection": "select", "value": 1}, "value": 0.3},
+                        "strokeWidth": {"condition": [
+                                                     {
+                                                      "test": {
+                                                                "and": [{"selection": "select"},"length(data(\"select_store\"))"]
+                                                               },
+                                                      "value": 2
+                                                      },
+                                                      {"selection": "highlight", "value": 1}
+                                                      ],
+                                        "value": 0
+                                        }
+                      }
+      };
           
-          };
       vegaEmbed('#vis', yourVlSpec);
+   
+        
     </script>
+    </center>     
     </body>
     
 </html>
