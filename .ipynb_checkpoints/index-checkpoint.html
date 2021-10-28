@@ -7,7 +7,7 @@
             <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
             <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
             <h1> Data Visualization </h1>
-            <h2> Assignment 3 </h2>
+            <h2> Assignment 3 : The Square Footage Battle</h2>
             <h3><i>Mayur Sridhar Sharma</i></h3>
     
         </head>
@@ -16,11 +16,11 @@
     
     <body>
         <p> 
-            The following visualization tells us about which agency has the most square footage owned/acquired till date. A simple sorted  bar plot shows the median sqaure footage v/s the corresponding agency name.  
+            The following visualization is about the most square footage owned/acquired till date by an agency. A simple sorted  bar plot shows the median sqaure footage v/s the corresponding agency name.  
     
         </p>
     
-    
+    <br><br>
     <center>   
     <div id="vis"> </div>
     
@@ -31,7 +31,7 @@
           "description": "A simple bar chart with embedded data.",
           "data": {"url": "https://raw.githubusercontent.com/Mayur-Sharma12/Mayur-Sharma12.github.io/master/building_inventory2.csv", "format": {"type": "csv"}},
           "mark": "bar", 
-          "title": "Agency v/s Median Square Footage",
+          "title": "Comparing Agency & Median Square Footage",
           "selection": {
                         "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
                         "select": {"type": "multi"}
@@ -44,12 +44,8 @@
                   },
           "encoding": {
               
-                        
-                     
-              
-              
                         "x": {"field": "Agency Name", "type": "nominal", "sort":"-y", "axis": {"labelAngle": 45}},
-                        "y": {"aggregate" : "median", "field": "Square Footage", "type": "quantitative"},
+                        "y": {"aggregate" : "median", "field": "Square Footage", "type": "quantitative","titleFontSize":"30"},
                         "fillOpacity": {"condition": {"selection": "select", "value": 1}, "value": 0.3},
                         "strokeWidth": {"condition": [
                                                      {
@@ -61,7 +57,7 @@
                                                       {"selection": "highlight", "value": 1}
                                                       ],
                                         "value": 0
-                                        },
+                                       },
               
                         "tooltip": [
                                       {"field":"Agency Name", "type": "nominal", "title":"Agency"},
@@ -72,10 +68,17 @@
       };
           
       vegaEmbed('#vis', yourVlSpec);
-   
-        
     </script>
-    </center>     
+    </center>
+        
+        <br><br>
+        <p>There are some level of interactivity. Upon hovering over the graph, detailed information about the specific bar pops up. On clicking the a bar, it gets highlighted.</p>
     </body>
+    
+    
+    <style>
+        h3 {color:#C2C0C0}
+    </style>
+    
     
 </html>
