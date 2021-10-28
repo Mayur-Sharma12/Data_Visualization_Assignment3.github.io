@@ -30,7 +30,7 @@
           "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
           "description": "A simple bar chart with embedded data.",
           "data": {"url": "https://raw.githubusercontent.com/Mayur-Sharma12/Mayur-Sharma12.github.io/master/building_inventory2.csv", "format": {"type": "csv"}},
-          "mark": "bar",
+          "mark": "bar", 
           "title": "Agency v/s Median Square Footage",
           "selection": {
                         "highlight": {"type": "single", "empty": "none", "on": "mouseover"},
@@ -43,6 +43,11 @@
                         "cursor": "pointer"
                   },
           "encoding": {
+              
+                        
+                     
+              
+              
                         "x": {"field": "Agency Name", "type": "nominal", "sort":"-y", "axis": {"labelAngle": 45}},
                         "y": {"aggregate" : "median", "field": "Square Footage", "type": "quantitative"},
                         "fillOpacity": {"condition": {"selection": "select", "value": 1}, "value": 0.3},
@@ -56,7 +61,13 @@
                                                       {"selection": "highlight", "value": 1}
                                                       ],
                                         "value": 0
-                                        }
+                                        },
+              
+                        "tooltip": [
+                                      {"field":"Agency Name", "type": "nominal", "title":"Agency"},
+                                      {"aggregate" : "median","field": "Square Footage", "type": "quantitative", "title":"Value"}
+                                   
+                                    ]
                       }
       };
           
