@@ -1,7 +1,7 @@
 # Data_Visualization_Assignment3.github.io
 Data Visualization Assignment 3
 
-This is a small interactive visualization I created for my assignment during my First semester at UIUC grad school.
+This is a small interactive visualization I created for my assignment during my First semester at UIUC for the class 'IS 445 Data Visualiztion'.
 I used Jupyter notebook and vega-lite for this visualization. 
 This project was all about getting to know how jupyter, vegalite, and github work together. 
 Bigger and better visualizations yet to come.
