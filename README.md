@@ -11,3 +11,5 @@ It has a list of all in-use building in the state of illinois.
 
 The following visualization tells us about which agency has the most square footage owned/acquired till date. A simple sorted bar plot shows the median square footage v/s the corresponding agency name. 
 The main motive of this visualization is to take a look at which agency has the most median square footage.
+
+![alt text](https://github.com/Mayur-Sharma12/Data_Visualization_Assignment3.github.io/blob/master/Screen%20Shot%202022-01-28%20at%204.31.26%20PM.png)
