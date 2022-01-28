@@ -1,4 +1,4 @@
-# Data_Visualization_Assignment3.github.io
+# Data_Visualization_Assignment3
 Data Visualization Assignment 3
 
 This is a small interactive visualization I created for my assignment during my First semester at UIUC for the class 'IS 445 Data Visualiztion'.
